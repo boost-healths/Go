@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>جاري التحويل...</title>
+    <script>
+        // قائمة الروابط الخاصة بك
+        const links = {
+            "ayoub": "https://getsynevra.com/welcome/?hopId=880a785e-b0fe-4378-824a-f913fe7bcae9&&shield=a9112ay9avdu2pchadjiy1ek5g",
+            "fb": "https://facebook.com/yourprofile",
+            "yt": "https://youtube.com/c/yourchannel"
+        };
+
+        // استخراج الكلمة بعد اسم المستودع Go
+        const pathSegments = window.location.pathname.split('/').filter(p => p.length > 0);
+        
+        // إذا كان الرابط يحتوي على /Go/ayoub فنحن نريد الكلمة الثانية (index 1)
+        // أما إذا كان الدومين مخصص فنأخذ الكلمة الأولى (index 0)
+        let target = "";
+        if (pathSegments[0] === 'Go') {
+            target = pathSegments[1];
+        } else {
+            target = pathSegments[0];
+        }
+
+        if (target && links[target]) {
+            window.location.replace(links[target]);
+        } else {
+            // العودة لصفحة المستودع الرئيسية إذا لم يجد الرابط
+            window.location.replace("/Go/");
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
+        <p>جاري توجيهك، يرجى الانتظار...</p>
+    </div>
+</body>
+</html>
