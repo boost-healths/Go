@@ -1,43 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>جاري التحويل...</title>
-    <script>
-        // قائمة الروابط الخاصة بك
-        const links = {
-           "Synevra UltraLift": "https://d1d7954b9y2v4r4d6lmit1andf.hop.clickbank.net"
-            "fb": "https://facebook.com/yourprofile",
-            "yt": "https://youtube.com/c/yourchannel",
-           "Sugar Defender": "https://7408e3w9612u0n3g0dpbp-iw4b.hop.clickbank.net"
-           "Synevra UltraLift": "https://d1d7954b9y2v4r4d6lmit1andf.hop.clickbank.net"
-           "Nagano Tonic" :"https://0bdc4-va07fs7l35dpqhk58xeh.hop.clickbank.net"
-           "Sumatra Slim Belly Tonic" :"https://sumatratonic.com/getstarted/?&shield=0aa9c11e08fo6r7o6bgf-9x9d4"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boost Healths | Premium Wellness Offers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            background-image: radial-gradient(#6366f1 0.5px, #f8fafc 0.5px);
+            background-size: 30px 30px;
         }
-
-        // استخراج الكلمة بعد اسم المستودع Go
-        const pathSegments = window.location.pathname.split('/').filter(p => p.length > 0);
-        
-        // إذا كان الرابط يحتوي على /Go/ayoub فنحن نريد الكلمة الثانية (index 1)
-        // أما إذا كان الدومين مخصص فنأخذ الكلمة الأولى (index 0)
-        let target = "";
-        if (pathSegments[0] === 'Go') {
-            target = pathSegments[1];
-        } else {
-            target = pathSegments[0];
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
-
-        if (target && links[target]) {
-            window.location.replace(links[target]);
-        } else {
-            // العودة لصفحة المستودع الرئيسية إذا لم يجد الرابط
-            window.location.replace("/Go/");
+        .link-btn {
+            transition: all 0.2s ease-in-out;
         }
-    </script>
+        .link-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body>
-    <div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
-        <p>جاري توجيهك، يرجى الانتظار...</p>
+<body class="min-h-screen flex items-center justify-center p-6">
+
+    <div class="glass-card max-w-md w-full rounded-[2.5rem] p-8 shadow-2xl text-center">
+        <div class="mb-6">
+            <div class="w-20 h-20 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-2xl mx-auto flex items-center justify-center shadow-lg transform rotate-3">
+                <span class="text-white text-4xl font-black -rotate-3">B</span>
+            </div>
+        </div>
+
+        <h1 class="text-3xl font-black text-slate-900 mb-1 italic">BOOST HEALTHS</h1>
+        <p class="text-slate-500 mb-8 font-medium">Exclusive Wellness Solutions</p>
+
+        <div class="space-y-4">
+            
+            <a href="/Go/synevra" class="link-btn block w-full py-4 px-6 bg-indigo-600 text-white font-bold rounded-2xl">
+                Synevra UltraLift 🌟
+            </a>
+
+            <a href="/Go/sugar" class="link-btn block w-full py-4 px-6 bg-emerald-600 text-white font-bold rounded-2xl">
+                Sugar Defender 🛡️
+            </a>
+
+            <a href="/Go/nagano" class="link-btn block w-full py-4 px-6 bg-orange-500 text-white font-bold rounded-2xl">
+                Nagano Lean Body Tonic 🍵
+            </a>
+
+            <a href="/Go/sumatra" class="link-btn block w-full py-4 px-6 bg-blue-600 text-white font-bold rounded-2xl">
+                Sumatra Slim Belly Tonic 🌀
+            </a>
+
+            <div class="py-2 px-4 italic text-slate-400 text-sm italic">—— Social Media ——</div>
+
+            <a href="/Go/fb" class="link-btn block w-full py-3 px-6 bg-white border-2 border-slate-200 text-slate-700 font-bold rounded-2xl hover:bg-slate-50">
+                Facebook Page
+            </a>
+
+        </div>
+
+        <footer class="mt-8 pt-6 border-t border-slate-100">
+            <p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">
+                Secure 256-bit SSL Connection
+            </p>
+        </footer>
     </div>
+
 </body>
 </html>
