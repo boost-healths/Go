@@ -4,51 +4,30 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-        // قائمة الروابط (تأكد أن الكلمات مطابقة لما في ملف index.html)
         const links = {
             "synevra": "https://d1d7954b9y2v4r4d6lmit1andf.hop.clickbank.net",
             "sugar": "https://7408e3w9612u0n3g0dpbp-iw4b.hop.clickbank.net",
             "nagano": "https://0bdc4-va07fs7l35dpqhk58xeh.hop.clickbank.net",
             "sumatra": "https://sumatratonic.com/getstarted/?&shield=0aa9c11e08fo6r7o6bgf-9x9d4",
-            " Neuro-Thrive " : "https://600d322a575p0v6ftq1lx9u4x8.hop.clickbank.net",
+            "neuro": "https://600d322a575p0v6ftq1lx9u4x8.hop.clickbank.net",
             "fb": "https://facebook.com/yourprofile",
             "yt": "https://youtube.com/c/yourchannel"
         };
 
-        // استخراج الكلمة بعد اسم المستودع /Go/
         const pathSegments = window.location.pathname.split('/').filter(p => p.length > 0);
-        
-        let target = "";
-        if (pathSegments[0] === 'Go') {
-            target = pathSegments[1];
-        } else {
-            target = pathSegments[0];
-        }
-
-        // تحويل الكلمة لنصوص عادية في حال وجود رموز
-        target = decodeURIComponent(target);
+        let target = (pathSegments[0] === 'Go') ? pathSegments[1] : pathSegments[0];
+        target = decodeURIComponent(target || "").trim();
 
         if (target && links[target]) {
-            // التحويل الفوري للرابط المطلوب
             window.location.replace(links[target]);
         } else {
-            // إذا لم يتم العثور على الرابط، يتم التوجيه للصفحة الرئيسية للمستودع
             window.location.replace("/Go/");
         }
     </script>
 </head>
 <body>
-    <div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif; color: #444;">
+    <div style="text-align: center; margin-top: 50px; font-family: sans-serif;">
         <p>Redirecting you to our secure offer...</p>
-        <div style="margin-top: 20px;">
-            <svg style="animation: spin 1s linear infinite; width: 40px; height: 40px; display: inline-block;" viewBox="0 0 24 24">
-                <circle style="opacity: 0.25;" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
-                <path style="opacity: 0.75;" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-        </div>
     </div>
-    <style>
-        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    </style>
 </body>
 </html>
